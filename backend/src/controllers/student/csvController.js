@@ -1,5 +1,5 @@
 import csvtojson from "csvtojson";
-import { Student } from "../models/student.model.js";
+import { Student } from "../../models/student.model.js";
 
 const importUserCsv = async (req, res) => {
     try {

@@ -1,7 +1,7 @@
 import express from "express";
 import multer from "multer";
 import path from "path";
-import importUserCsv from "../controllers/csvController.js"; // Import the correct controller function
+import importUserCsv from "../controllers/student/csvController.js"; // Import the correct controller function
 import importUserForm from "../controllers/formController.js";
 
 const router = express.Router();
