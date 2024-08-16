@@ -3,25 +3,49 @@ import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
 
 const studentSchema = new mongoose.Schema({
-    name : {
+    name: {
         type : String,
-        required : false,
+        required : true,
+        unique : false,
     },
-    email : {
+    rollno: {
+        type : String,
+        required : true,
+        unique : true,
+        uppercase : true,
+    },
+    mobile: {
+        type : Number,
+        required : true,
+        unique : false,
+    },
+    //testing starts here
+    sem: {
+        type : Number,
+        required : true,
+        unique : false,
+    },
+    dlo: {
+        type : String,
+        requried : true,
+        unique : false,
+    },
+    mentor: {
+        type : String,
+        required : true,
+        unique : false,
+    },
+    //testing ends here
+    email: {
         type : String,
         lowercase : true,
         required : true,
         unique : true,
     },
-    password : {
+    password: {
         type : String,
         required : true,
     },
-    mobile : {
-        type : Number,
-        required : true,
-        unique : true,
-    }
 },{timestamps : true});
 
 studentSchema.pre("save", async function(next) {

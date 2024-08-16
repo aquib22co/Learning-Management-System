@@ -6,9 +6,14 @@ const CreateStudent = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
     const [formData, setFormData] = useState({
+        name : '',
+        rollno : '',
+        mobile : '',
+        sem : '',
+        dlo : '',
+        mentor : '',
         email: '',
         password: '',
-        mobile: '',
     });
 
     const handleFileChange = (event) => {

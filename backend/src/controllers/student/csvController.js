@@ -12,6 +12,11 @@ const importUserCsv = async (req, res) => {
         jsonArray.forEach((user) => {
             userData.push({
                 name: user.name,
+                rollno: user.rollno,
+                mobile : user.mobile,
+                sem: user.sem,
+                dlo : user.dlo,
+                mentor: user.mentor,
                 email: user.email,
                 password : user.password,
                 mobile: user.mobile, // Ensure the CSV headers match these keys
