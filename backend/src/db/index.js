@@ -15,7 +15,7 @@ const connectDB = async () => {
     }
 
     //await getStudentsBySemester();
-    await createSemesters();
+    // await createSemesters();
 }
 
 export default connectDB
