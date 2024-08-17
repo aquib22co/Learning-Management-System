@@ -21,13 +21,9 @@ const studentSchema = new mongoose.Schema({
     },
     //testing starts here
     sem: {
-        type : Number,
+        type : mongoose.Schema.Types.ObjectId,  // to be updated
+        ref : "Semester",
         required : true,
-        unique : false,
-    },
-    dlo: {
-        type : String,
-        requried : true,
         unique : false,
     },
     mentor: {
@@ -59,8 +55,8 @@ studentSchema.pre("save", async function(next) {
     next();
     })
     
-    studentSchema.methods.isPasswordCorrect = async function(password){
+studentSchema.methods.isPasswordCorrect = async function(password){
     return await bcrypt.compare(password, this.password)
-    }
+}
 
 export const Student = mongoose.model("Student",studentSchema);
